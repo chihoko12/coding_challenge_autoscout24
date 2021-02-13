@@ -1,7 +1,10 @@
 class ListingsController < ApplicationController
 
-def price_per_seller_type
+  def price_per_seller_type
 
-end
+  end
+
+  def cars_by_make
+  end
 
 end

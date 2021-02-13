@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root to: 'contacts#index'
 
   get "listings/price", to: "listings#price_per_seller_type"
+  get "listings/cars", to: "listings#cars_by_make"
 
 end
