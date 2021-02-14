@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+require "csv"
 
   def index
   end
@@ -14,6 +15,14 @@ class ListingsController < ApplicationController
   end
 
   def price_top_five_contacted
+  end
+
+  private
+
+  def load_csv
+  end
+
+  def save_csv
   end
 
 end
