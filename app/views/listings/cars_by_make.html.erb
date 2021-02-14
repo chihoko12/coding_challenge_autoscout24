@@ -1,7 +1,7 @@
 <div class=container>
 
   <div class="container mt-5">
-    <h2>Percentual distribution of available cars by Make</h2>
+    <h2><i class="fas fa-percentage"></i> Percentual distribution of available cars by Make</h2>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -10,21 +10,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Audi</td>
-          <td>55%</td>
-        </tr>
-        <tr>
-          <td>BMW</td>
-          <td>35%</td>
-        </tr>
-        <tr>
-          <td>VW</td>
-          <td>10%</td>
-        </tr>
+        <% @sorted.each do |row| %>
+          <tr>
+            <td><%= row[0] %></td>
+            <td><%= (row[1].fdiv(@makes.count)*100).round %>%</td>
+          </tr>
+        <% end %>
+
       </tbody>
     </table>
     <div><%= link_to "Back", root_path %></div>
-  </div>
-
 </div>

@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
 require "csv"
-before_action :load_csv, only: [:index, :price_per_seller_type]
+before_action :load_csv, only: [:index, :price_per_seller_type, :cars_by_make]
 
   def index
   end
@@ -24,9 +24,16 @@ before_action :load_csv, only: [:index, :price_per_seller_type]
     @privates_price = @privates.sum / @privates.count
     @dealers_price = @dealers.sum / @dealers.count
     @others_price = @others.sum / @others.count
+
+    # @seller_type = @listings.reject { |s| s[4] == "seller_type"}.map { |s| {s[4]=>s[2].to_i} }
+    # @privates_sum = @seller_type.sum { |s| s["private"] if s["private"] }
+
   end
 
   def cars_by_make
+    @makes = @listings.reject{ |m| m[1] == "make"}.map { |m| m[1]}
+    @counts = @makes.inject(Hash.new(0)) { |total, e| total[e] += 1; total }
+    @sorted = @counts.sort_by { |k,v| -v }
   end
 
   def price_most_contacted
