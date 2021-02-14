@@ -13,4 +13,7 @@ class ListingsController < ApplicationController
   def price_most_contacted
   end
 
+  def price_top_five_contacted
+  end
+
 end

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get "listings/price", to: "listings#price_per_seller_type"
   get "listings/cars", to: "listings#cars_by_make"
   get "listings/price_contacted", to: "listings#price_most_contacted"
+  get "listings/price_top_five_contacted", to: "listings#price_top_five_contacted"
 
 end
