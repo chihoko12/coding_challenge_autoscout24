@@ -21,9 +21,8 @@ class ListingsController < ApplicationController
   end
 
   def cars_by_make
-    @makes = @listings.reject{ |m| m[1] == "make"}.map { |m| m[1]}
-    @counts = @makes.inject(Hash.new(0)) { |total, e| total[e] += 1; total }
-    @sorted = @counts.sort_by { |k,v| -v }
+    @makes = Listing.group(:make).count.sort_by { |k,v| -v}
+    @listings_count = Listing.all.count
   end
 
   def price_most_contacted

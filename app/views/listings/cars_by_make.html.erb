@@ -10,10 +10,10 @@
         </tr>
       </thead>
       <tbody>
-        <% @sorted.each do |row| %>
+        <% @makes.each do |row| %>
           <tr>
             <td><%= row[0] %></td>
-            <td><%= (row[1].fdiv(@makes.count)*100).round %>%</td>
+            <td><%= (row[1].fdiv(@listings_count)*100).round %>%</td>
           </tr>
         <% end %>
 
