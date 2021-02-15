@@ -28,6 +28,7 @@ Things you may want to cover:
 - [About App](https://github.com/chihoko12/coding_challenge_autoscout24/README.md#about-app)
 - [App Usage - CRUD API Endpoints](https://github.com/chihoko12/coding_challenge_autoscout24/README.md#endpoints)
 - [Tests](https://github.com/chihoko12/coding_challenge_autoscout24/README.md#testing-app)
+- [Check App](https://coding-challenge-autoscout24.herokuapp.com/)
 
 # About App:
 [↑ Go To Top ↑](https://github.com/chihoko12/coding_challenge_autoscout24README.md#readme)
@@ -35,7 +36,7 @@ Things you may want to cover:
 * Ruby version
 
   ```ruby
-  2.6.5
+  2.6.6
   ```
 * System dependencies
 
@@ -57,7 +58,7 @@ Things you may want to cover:
 
 * Heroku
 
-  [Spectrm Challenge](https://spectrm-challenge-rsmml.herokuapp.com/api/v1/messages)
+  [Coding Challenge](https://coding-challenge-autoscout24.herokuapp.com/)
 
 # Install App Locally
 [↑ Go To Top ↑](https://github.com/chihoko12/coding_challenge_autoscout24/README.md#readme)
@@ -222,103 +223,6 @@ in case the default port is not 3000.
 
 # ENDPOINTS:
 [↑ Go To Top ↑](https://github.com/chihoko12/coding_challenge_autoscout24/README.md#readme)
-
-
-### Testing in POSTMAN:
-
-If you don't have the **Postman** desktop app, please go to this [website](https://www.postman.com/dark-shuttle-75858/workspace/spectrm-challenge/request/create?requestId=e1fabc34-985b-4624-9abb-ef4944462115).
-Log-in or Sign-up if necessary.
-This is a **public workspace** dedicated to this API.
-
-
-- ### **List** all messages:
-
-  |   Verb    |    URL    |    Key    |    Value    |
-  |-----------|-----------|-----------|-------------|
-  |   GET     |    http://localhost:3000/api/v1/messages    |    -    |    -    |
-  |   GET     |    https://spectrm-challenge-rsmml.herokuapp.com/api/v1/messages    |    -    |    -    |
-
-- ### **Retrieve** a Message instance:
-
-  |   Verb    |    URL    |    Key    |    Value    |
-  |-----------|-----------|-----------|-------------|
-  |   GET     |    http://localhost:3000/api/v1/messages/:identifier    |    -    |    -    |
-  |   GET     |    https://spectrm-challenge-rsmml.herokuapp.com/api/v1/messages/4021b575-485a-4848-b75e-60be5b31b035    |    -    |    -    |
-
-  :identifier => [Get Identifier](https://github.com/rsmml/spectrm-challenge/blob/master/README.md#identifier)
-
-- ### **Create** a Message instance:
-
-  |   Verb    |    URL    |    Key    |    Value    |
-  |-----------|-----------|-----------|-------------|
-  |   POST     |    http://localhost:3000/api/v1/messages    |    body    |    TEXT    |
-  |   POST     |    https://spectrm-challenge-rsmml.herokuapp.com/api/v1/messages   |    body    |    TEXT    |
-
-
-- ### **Update** a Message instance:
-
-  |   Verb    |    URL    |    Key    |    Value    |
-  |-----------|-----------|-----------|-------------|
-  |   PATCH     |    http://localhost:3000/api/v1/messages/:identifier    |    body    |    NEW_TEXT    |
-  |   PATCH     |    https://spectrm-challenge-rsmml.herokuapp.com/api/v1/messages/4021b575-485a-4848-b75e-60be5b31b035    |    body    |    NEW_TEXT    |
-
-  :identifier => [Get Identifier](https://github.com/rsmml/spectrm-challenge/blob/master/README.md#identifier)
-
-- ### **Delete** a Message instance:
-
-  |   Verb    |    URL    |    Key    |    Value    |
-  |-----------|-----------|-----------|-------------|
-  |   DELETE     |    http://localhost:3000/api/v1/messages/:identifier    |    -    |    -    |
-  |   DELETE     |    https://spectrm-challenge-rsmml.herokuapp.com/api/v1/messages/4021b575-485a-4848-b75e-60be5b31b035    |    -    |    -    |
-
-  :identifier => [Get Identifier](https://github.com/rsmml/spectrm-challenge/blob/master/README.md#identifier)
-
-- ### **Identifier**
-
-  **LOCALLY**
-
-  Because when you install the APP there is no DB we have to create one and run the seed.rb file
-  that will create 50 new messages with unknowns id.
-  In order to know one of the identifiers, we will take the last instances of the Message created, and from it, we will
-  take the id or identifier.
-
-  On the console run:
-
-  ```ruby
-  rails c
-  ```
-  Once the irb console is open, run
-
-  ```ruby
-  Message.last.id
-  ```
-  You should get a value like this one [fdfd69e2-ed20-4af4-a8e4-ffe7d9036eb7](https://github.com/rsmml/spectrm-challenge/blob/master/README.md#identifier)
-  This is the id or identifier of the Message instance.
-
-  **DOCKER**:whale:
-
-  While the container is running in localhost, run:
-
-  ```ruby
-  docker-compose run web rails c
-  ```
-
-  This will brings you to the irb console of the app. Then just run the following command to get an UUID:
-
-  ```ruby
-  Message.last.id
-  ```
-  You should get a value like this one [fdfd69e2-ed20-4af4-a8e4-ffe7d9036eb7](https://github.com/rsmml/spectrm-challenge/blob/master/README.md#identifier)
-  This is the id or identifier of the Message instance.
-
-  **HEROKU**
-
-  - "id": "4021b575-485a-4848-b75e-60be5b31b035"
-  - "id": "0ce1fed9-4f3b-488b-890f-1a07f4621ca8"
-  - "id": "cee782bc-b349-4768-8d39-95468986af5e"
-
-
-[localhost:3000](http://localhost:3000/api/v1/messages)
 
 
 # Testing App
