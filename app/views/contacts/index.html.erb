@@ -1,0 +1,23 @@
+    <p>contacts.csv</p>
+    <%= form_tag import_contacts_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "import" %>
+    <% end %>
+
+<h4 class="mt-5">contacts.csv</h4>
+<table class="table table-striped listings-table" id="csv_data">
+    <thead>
+        <tr>
+            <th>listing_id</th>
+            <th>contact_date</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @contacts.limit(10).each do |contact| %>
+        <tr>
+          <td><%= contact.listing_id %></td>
+          <td><%= contact.contact_date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>

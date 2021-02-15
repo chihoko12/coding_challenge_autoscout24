@@ -1,6 +1,16 @@
 class ContactsController < ApplicationController
-require "csv"
 before_action :load_csv, only: [:contacts]
+
+def index
+  @contacts = Contact.all
+end
+
+def import
+  Contact.import(params[:file])
+  redirect_to listings_url
+end
+
+
 
 def sort
   @contacted = @contacts.reject{ |c| c[0] == "listing_id"}.map { |c| c[0]}

@@ -1,8 +1,13 @@
 class ListingsController < ApplicationController
-require "csv"
 before_action :load_csv, only: [:index, :price_per_seller_type, :cars_by_make]
 
   def index
+    @listings = Listing.all
+  end
+
+  def import
+    Listing.import(params[:file])
+    redirect_to listings_url
   end
 
   def price_per_seller_type

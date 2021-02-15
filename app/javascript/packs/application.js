@@ -3,5 +3,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-// External iimports
+// External imports
 import 'bootstrap';
+
+// Internal imports
