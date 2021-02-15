@@ -7,7 +7,7 @@ end
 
 def import
   Contact.import(params[:file])
-  redirect_to listings_url
+  redirect_to contacts_url
 end
 
 

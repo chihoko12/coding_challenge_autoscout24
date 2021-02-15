@@ -16,7 +16,7 @@
       <% @contacts.limit(10).each do |contact| %>
         <tr>
           <td><%= contact.listing_id %></td>
-          <td><%= contact.contact_date %></td>
+          <td><%= Time.zone.at(contact.contact_date.to_i/1000) %></td>
         </tr>
       <% end %>
     </tbody>
