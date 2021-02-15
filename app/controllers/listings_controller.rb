@@ -37,6 +37,7 @@ before_action :load_csv, only: [:index, :price_per_seller_type, :cars_by_make]
   end
 
   def price_most_contacted
+    render 'contacts/sort'
   end
 
   def price_top_five_contacted
@@ -47,8 +48,10 @@ before_action :load_csv, only: [:index, :price_per_seller_type, :cars_by_make]
   def load_csv
     @listings = []
     @csv_file = "data/listings.csv"
-    CSV.foreach(@csv_file) do |row|
-      @listings << row
+    if File.exist?(@csv_file)
+      CSV.foreach(@csv_file) do |row|
+        @listings << row
+      end
     end
   end
 

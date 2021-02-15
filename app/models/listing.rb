@@ -4,5 +4,6 @@ class Listing < ApplicationRecord
   validates :price, presence: true
   validates :mileage, presence: true
   validates :seller_type, presence: true
+  has_many :contacts
 
 end
