@@ -3,21 +3,21 @@
   <div class="container mt-5">
 
     <h1>AutoScout24 Listing Report</h1>
-    <h3 class=mt-3><i class="fas fa-search-dollar"></i> <%= link_to "Average Listing Selling Price per Seller Type", listings_price_path %></h3>
-    <h3 class=mt-3><i class="fas fa-percentage"></i> <%= link_to "Percentual distribution of available cars by Make", listings_cars_path %></h3>
-    <h3 class=mt-3><i class="fas fa-hand-holding-usd"></i> <%= link_to "Average price of the 30% most contacted listings", listings_price_contacted_path %></h3>
-    <h3 class=mt-3><i class="fas fa-award"></i> <%= link_to "The Top 5 most contacted listings per Month", listings_price_top_five_contacted_path %></h3>
+    <h3 class=mt-3><i class="fas fa-search-dollar"></i> <%= link_to "Average Listing Selling Price per Seller Type", price_listings_path %></h3>
+    <h3 class=mt-3><i class="fas fa-percentage"></i> <%= link_to "Percentual distribution of available cars by Make", cars_listings_path %></h3>
+    <h3 class=mt-3><i class="fas fa-hand-holding-usd"></i> <%= link_to "Average price of the 30% most contacted listings",  price_contacted_listings_path %></h3>
+    <h3 class=mt-3><i class="fas fa-award"></i> <%= link_to "The Top 5 most contacted listings per Month", price_top_five_contacted_listings_path %></h3>
   </div>
 
   <div class="container mt-5">
 
-    <p>Listing.csv</p>
+    <h4>Listing.csv</h4>
     <%= form_tag import_listings_path, multipart: true do %>
       <%= file_field_tag :file %>
       <%= submit_tag "import" %>
     <% end %>
 
-    <p>contacts.csv</p>
+    <h4 class=mt-3>contacts.csv</h4>
     <%= form_tag import_contacts_path, multipart: true do %>
       <%= file_field_tag :file %>
       <%= submit_tag "import" %>
@@ -35,7 +35,7 @@
             </tr>
         </thead>
         <tbody>
-          <% @listings.limit(10).each do |listing| %>
+          <% @listings.limit(5).each do |listing| %>
             <tr>
               <td><%= listing.id %></td>
               <td><%= listing.make %></td>
@@ -47,5 +47,6 @@
         </tbody>
     </table>
 
+    <%= render partial: "contacts/index" %>
 
 </div>

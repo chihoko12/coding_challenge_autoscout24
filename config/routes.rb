@@ -4,16 +4,19 @@ Rails.application.routes.draw do
 
   resources :listings do
     collection { post :import }
-  end
+    collection { get :price_per_seller_type, as: 'price' }
+    collection { get :cars_by_make, as: 'cars' }
+    collection { get :price_most_contacted, as: 'price_contacted' }
+    collection { get :price_top_five_contacted, as: 'price_top_five_contacted' }
+    end
 
   resources :contacts do
     collection { post :import }
   end
 
-  get "listings/index"
-  get "listings/price", to: "listings#price_per_seller_type"
-  get "listings/cars", to: "listings#cars_by_make"
-  get "listings/price_contacted", to: "listings#price_most_contacted"
-  get "listings/price_top_five_contacted", to: "listings#price_top_five_contacted"
+  # get "listings/price", to: "listings#price_per_seller_type"
+  # get "listings/cars", to: "listings#cars_by_make"
+  # get "listings/price_contacted", to: "listings#price_most_contacted"
+  # get "listings/price_top_five_contacted", to: "listings#price_top_five_contacted"
 
 end

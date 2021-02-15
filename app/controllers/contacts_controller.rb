@@ -7,7 +7,7 @@ before_action :load_csv, only: [:contacts]
 
   def import
     Contact.import(params[:file])
-    redirect_to contacts_url
+    redirect_to listings_url
   end
 
 
@@ -16,8 +16,4 @@ before_action :load_csv, only: [:contacts]
     @counts = @contacted.inject(Hash.new(0)) { |total, e| total[e] += 1; total }
     @sorted = @counts.sort_by { |k,v| -v }
   end
-
-
 end
-
-

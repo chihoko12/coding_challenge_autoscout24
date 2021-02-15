@@ -15,6 +15,7 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'roo'
+gem 'activerecord-import'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
