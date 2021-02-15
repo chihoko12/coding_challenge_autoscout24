@@ -1,0 +1,17 @@
+<h4 class="mt-5">contacts.csv</h4>
+<table class="table table-striped listings-table" id="csv_data">
+    <thead>
+        <tr>
+            <th>listing_id</th>
+            <th>contact_date</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @contacts.limit(5).each do |contact| %>
+        <tr>
+          <td><%= contact.listing_id %></td>
+          <td><%= Time.zone.at(contact.contact_date.to_i/1000) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>
