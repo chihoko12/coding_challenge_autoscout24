@@ -26,7 +26,23 @@ class ListingsController < ApplicationController
   end
 
   def price_most_contacted
-    render 'contacts/sort'
+    # @contacts_count = Contact.all.count
+    @contacts = Contact.group(:listing_id).count.sort_by { |k,v| -v}
+
+    @price_sum = 0
+    @contact_count = Contact.all.count * 0.3
+    @listing_count = 0
+
+
+    # loop do
+    #  break if @contact_count.zero?
+    #     @contacts.each do |contact|
+    #       @price_sum += Listing.find(contact[0]).price
+    #       @contact_count -= contact[1]
+    #       @listing_count += 1
+    #     end
+    # end
+
   end
 
   def price_top_five_contacted

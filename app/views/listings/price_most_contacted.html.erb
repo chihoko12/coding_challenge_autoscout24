@@ -10,15 +10,14 @@
       </thead>
       <tbody>
         <tr>
-          <td>€12.512,-</td>
+          <td>€ <%= (@price_sum / @listing_count).round %>,-</td>
+          <td>€ <%= @price_sum %>,-</td>
+          <td>€ <%= @listing_count %>,-</td>
+          <td>€ <%= @contact_count %>,-</td>
         </tr>
       </tbody>
     </table>
     <div><%= link_to "Back", root_path %></div>
-
-<h2><%= @sorted %></h2>
-
-</div>
-
+  </div>
 
 </div>
