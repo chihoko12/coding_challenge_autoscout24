@@ -4,6 +4,7 @@ class ContactsController < ApplicationController
   end
 
   def import
+    Contact.delete_all unless Contact.empty?
     Contact.import(params[:file])
     redirect_to listings_url
   end
@@ -16,17 +17,15 @@ class ContactsController < ApplicationController
     @contacts = Contact.group(:listing_id).order('count_listing_id DESC').count(:listing_id)
 
     @price_sum = 0
-    @contact_count = Contact.all.count * 0.3
+    @contact_count = 0
     @listing_count = 0
 
-
-    # loop do
-    #  break if @contact_count.zero?
-    #     @contacts.each do |contact|
-    #       @price_sum += Listing.find(contact[0]).price
-    #       @contact_count -= contact[1]
-    #       @listing_count += 1
-    #     end
+     @contact_count < Contact.all.count * 0.3
+        @contacts.each do |contact|
+          # puts @price_sum += Listing.find(contact[0]).price
+          puts @contact_count += contact[1]
+          # puts @listing_count += + 1
+        end
     # end
   end
 
