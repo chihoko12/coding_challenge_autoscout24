@@ -1,7 +1,19 @@
 <div class=container>
 
     <h2>The Top 5 most contacted listings per Month</h2>
-    <%= @contacts %>
+
+    <h4>Month: <%= Time.at(Contact.minimum("contact_date")/1000).strftime("%m.%Y") %></h4>
+
+    <h4>
+      <%= @result %>
+      <%= @contact_month %>
+    </h4>
+    <h4>
+      <%= Listing.find(Contact.first[:listing_id]).make %>
+      <%= Listing.find(Contact.first[:listing_id]).price %>
+      <%= Listing.find(Contact.first[:listing_id]).mileage %>
+    </h4>
+
 
     <table class="table table-striped">
       <thead>

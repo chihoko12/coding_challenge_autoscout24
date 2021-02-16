@@ -10,13 +10,7 @@
       </thead>
       <tbody>
         <tr>
-          <td>€ <%= number_with_delimiter(@price_sum, :delimiter => ',') %>,-</td>
-        </tr>
-        <tr>
-          <td> <%= @listing_count %>,-</td>
-        </tr>
-        <tr>
-          <td> <%= @contact_count %>,-</td>
+          <td>€ <%= number_with_delimiter(@price_sum/@counter, :delimiter => ',') %>,-</td>
         </tr>
       </tbody>
     </table>

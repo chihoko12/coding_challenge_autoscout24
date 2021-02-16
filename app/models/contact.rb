@@ -4,18 +4,14 @@ class Contact < ApplicationRecord
   validates :contact_date, presence: true
 
   def self.import(file)
-    columns = %i(listing_id, contact_date)
-    CSV.foreach(file.path).each_slice(1000) do |row|
-      values = []
-      values << [row[0], row[1]]
-      # contact.attributes = row.to_hash.slice(*updatable_attributes)
-      # contact.save
-      Contact.import columns, values
+    CSV.foreach(file.path, headers: true) do |row|
+      contact = new
+      contact.attributes = row.to_h.slice(*updatable_attributes)
+      contact.save
     end
   end
 
-  # define column which allows update
-  # def self.updatable_attributes
-  #   ["listing_id", "contact_date"]
-  # end
+  def self.updatable_attributes
+    ["listing_id", "contact_date"]
+  end
 end
