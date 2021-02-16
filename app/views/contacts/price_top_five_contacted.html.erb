@@ -1,78 +1,38 @@
 <div class=container>
 
-    <h2>The Top 5 most contacted listings per Month</h2>
+  <h2>The Top 5 most contacted listings per Month</h2>
+  <h4>
+    <%= @top_five %>
+  </h4>
 
-    <h4>Month: <%= Time.at(Contact.minimum("contact_date")/1000).strftime("%m.%Y") %></h4>
+  <% @top_five.each do |k, v|%>
+    <h5>Month: <%= k %></h5>
 
-    <h4>
-      <%= @result %>
-      <%= @contact_month %>
-    </h4>
-    <h4>
-      <%= Listing.find(Contact.first[:listing_id]).make %>
-      <%= Listing.find(Contact.first[:listing_id]).price %>
-      <%= Listing.find(Contact.first[:listing_id]).mileage %>
-    </h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Ranking</th>
+            <th scope="col">Listing Id</th>
+            <th scope="col">Make</th>
+            <th scope="col">Selling Price</th>
+            <th scope="col">Mileage</th>
+            <th scope="col">Total Amount of contacts</th>
+          </tr>
+        </thead>
+        <% v.each_with_index do |item, i| %>
+          <tbody>
+            <tr>
+              <td><%= i + 1 %></td>
+              <td><%= item[0] %></td>
+              <td><%= Listing.find(item[0]).make %></td>
+              <td>€ <%= number_with_delimiter(Listing.find(item[0]).price, :delimiter => ',') %>,-</td>
+              <td><%= Listing.find(item[0]).mileage %>KM</td>
+              <td><%= item[1] %></td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+  <% end %>
 
-
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Ranking</th>
-          <th scope="col">Listing Id</th>
-          <th scope="col">Make</th>
-          <th scope="col">Selling Price</th>
-          <th scope="col">Mileage</th>
-          <th scope="col">Total Amount of contacts</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>1000-</td>
-          <td>BMW</td>
-          <td>€2.538,-</td>
-          <td>50.000KM</td>
-          <td>15</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>1001-</td>
-          <td>Audi</td>
-          <td>€4.300,-</td>
-          <td>20.000KM</td>
-          <td>12</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>1002-</td>
-          <td>Toyota</td>
-          <td>€18.250,-</td>
-          <td>35.000KM</td>
-          <td>11</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>1003-</td>
-          <td>VW</td>
-          <td>€25.080,-</td>
-          <td>45.678KM</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>1004-</td>
-          <td>Porsche</td>
-          <td>€102.000,-</td>
-          <td>2.000KM</td>
-          <td>8</td>
-        </tr>
-
-      </tbody>
-
-    </table>
-    <div><%= link_to "Back", root_path %></div>
-  </div>
-
-
+  <div><%= link_to "Back", root_path %></div>
 </div>

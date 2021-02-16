@@ -30,9 +30,17 @@ class ContactsController < ApplicationController
 
   def price_top_five_contacted
     @monthly = monthly_result
+    @result = {}
+    @top_five = {}
 
-
-
+    @monthly.each do |key ,value|
+      @result = value.sort_by { |k,v| -v}.first(5).to_h
+      if @top_five.has_key?(key)
+        @top_five[key] < @result
+      else
+        @top_five[key] = @result
+      end
+    end
   end
 
   def monthly_result
@@ -53,6 +61,7 @@ class ContactsController < ApplicationController
         @contact_month[month] = @counts
       end
     end
+    return @contact_month
   end
 
 end
