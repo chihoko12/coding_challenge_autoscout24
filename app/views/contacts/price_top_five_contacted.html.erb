@@ -6,7 +6,7 @@
   </h4>
 
   <% @top_five.each do |k, v|%>
-    <h5>Month: <%= k %></h5>
+    <h5 class="mt3">Month: <%= k %></h5>
 
       <table class="table table-striped">
         <thead>
@@ -26,7 +26,7 @@
               <td><%= item[0] %></td>
               <td><%= Listing.find(item[0]).make %></td>
               <td>€ <%= number_with_delimiter(Listing.find(item[0]).price, :delimiter => ',') %>,-</td>
-              <td><%= Listing.find(item[0]).mileage %>KM</td>
+              <td><%= number_with_delimiter(Listing.find(item[0]).mileage, delimiter: ".") %>KM</td>
               <td><%= item[1] %></td>
             </tr>
           </tbody>
