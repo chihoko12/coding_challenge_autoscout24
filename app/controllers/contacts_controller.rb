@@ -4,10 +4,10 @@ class ContactsController < ApplicationController
   end
 
   def import
-      Contact.delete_all unless Contact.count.zero?
-      Contact.import(params[:file])
-      redirect_to root_path
-    end
+    Contact.delete_all unless Contact.count.zero?
+    Contact.import(params[:file])
+    redirect_to root_path
+  end
 
   def price_most_contacted
     @contacts = @contacts = Contact.group(:listing_id).order('count_listing_id DESC').count(:listing_id)
@@ -29,39 +29,21 @@ class ContactsController < ApplicationController
     end
 
   def price_top_five_contacted
-    @monthly = monthly_result
-    @result = {}
-    @top_five = {}
-
-    @monthly.each do |key ,value|
-      @result = value.sort_by { |k,v| -v}.first(5).to_h
-      if @top_five.has_key?(key)
-        @top_five[key] < @result
-      else
-        @top_five[key] = @result
-      end
-    end
-  end
-
-  def monthly_result
-    @contact_month = {}
-    @counts = {}
+    @list = {}
 
     Contact.all.order(:contact_date).each do |cnt|
       month = Time.at(cnt[:contact_date]/1000).strftime("%m.%Y")
-      if @contact_month.has_key?(month)
-        if @counts[cnt.listing_id.to_s]
-          @counts[cnt.listing_id.to_s] += 1
+        if @list[month]
+          @list[month] << cnt[:listing_id]
         else
-          @counts[cnt.listing_id.to_s] = 1
+          @list[month] = [cnt[:listing_id]]
         end
-        @contact_month[month] < @counts
-      else
-        @counts[cnt.listing_id.to_s] = 1
-        @contact_month[month] = @counts
-      end
     end
-    return @contact_month
-  end
 
+    @top_five = {}
+    @list.each do |k,v|
+      value  = v.uniq.map{ |t| [t,v.count(t)]}.to_h.sort_by { |_, v| -v }.first(5).to_h
+      @top_five[k] = value
+    end
+  end
 end
