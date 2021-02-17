@@ -7,7 +7,7 @@
 - [Test App](https://github.com/chihoko12/coding_challenge_autoscout24/README.md#test-app)
 
 
-# About App:
+# About App
 [↑ Go To Top ↑](https://github.com/chihoko12/coding_challenge_autoscout24README.md#readme)
 
 * Ruby version
