@@ -13,4 +13,11 @@ Rails.application.routes.draw do
     collection { get :price_most_contacted, as: 'price_contacted' }
     collection { get :price_top_five_contacted, as: 'price_top_five_contacted' }
   end
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :listings, only: [ :index ]
+      resources :contacts, only: [ :index ]
+    end
+  end
 end
