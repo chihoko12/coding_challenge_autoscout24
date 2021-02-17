@@ -9,7 +9,14 @@
 ## About App
 [↑ Go To Top ↑](#readme)
 
-* Ruby version  ``` ruby 2.6.6 ```
+* What this APP offers: 
+1. Average Listing Selling Price per Seller Type
+2. Distribution (in percent) of available cars by Make
+3. Average price of the 30% most contacted listings
+4. The Top 5 most contacted listings per Month
+
+* Language: Ruby version  ``` ruby 2.6.6 ```
+* Web Frameworks: Ruby on Rails
 * System dependencies  ``` ruby bundle install ```
 * Database creation  ``` ruby rails db:create db:migrate db:seed ```
 * Server initialization ``` ruby rails s ```
