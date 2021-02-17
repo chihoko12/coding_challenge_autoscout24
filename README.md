@@ -3,39 +3,21 @@
 - [About App](#about-app)
 - [Check App](#check-app)
 - [Check App Locally](#check-app-locally)
+- [API Endpoint](#api-endpoint)
 
 
 ## About App
 [↑ Go To Top ↑](#readme)
 
-* Ruby version
-
-  ```ruby
-  2.6.6
-  ```
-* System dependencies
-
-  ```ruby
-  bundle install
-  ```
-
-* Database creation
-
-  ```ruby
-  rails db:create db:migrate db:seed
-  ```
-
-* Server initialization
-
-  ```ruby
-  rails s
-  ```
+* Ruby version  ``` ruby 2.6.6 ```
+* System dependencies  ``` ruby bundle install ```
+* Database creation  ``` ruby rails db:create db:migrate db:seed ```
+* Server initialization ``` ruby rails s ```
 
 ## Check APP
 [↑ Go To Top ↑](#readme)
 
-* Check APP on Heroku
-  [Coding Challenge](https://coding-challenge-autoscout24.herokuapp.com/)
+* Check APP on Heroku   [Coding Challenge](https://coding-challenge-autoscout24.herokuapp.com/)
   
 
 ## Check App Locally
@@ -70,7 +52,6 @@ load schema.rb, and seed the data by running seeds.rb.
 
 Run ```bundle install``` & ```rails db:migrate``` 
 
-
 This app uses PostgreSQL as database. If you don't have it, you need to install it:
 
 ```ruby
@@ -88,3 +69,16 @@ rails s --p 3000
 
 * Open the browser.
 ```http://localhost:3000```
+
+
+## API Endpoint
+
+listings GET
+```
+api/v1/listings
+```
+
+contacts GET
+```
+api/v1/contacts
+```
