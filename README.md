@@ -1,14 +1,14 @@
-# README
+## README
 
-- [About App](https://github.com/chihoko12/coding_challenge_autoscout24/README.md#about-app)
-- [Check App](https://coding-challenge-autoscout24.herokuapp.com/)
-- [Check App Locally](https://github.com/chihoko12/coding_challenge_autoscout24/README.md#check-app-locally)
-- [API Endpoints](https://github.com/chihoko12/coding_challenge_autoscout24/README.md#endpoints)
-- [Test App](https://github.com/chihoko12/coding_challenge_autoscout24/README.md#test-app)
+- [About App](#about-app)
+- [Check App](#check-app)
+- [Check App Locally](#check-app-locally)
+- [API Endpoints](#api-endpoints)
+- [Test App](#test-app)
 
 
-# About App
-[↑ Go To Top ↑](https://github.com/chihoko12/coding_challenge_autoscout24README.md#readme)
+## About App
+[↑ Go To Top ↑](#readme)
 
 * Ruby version
 
@@ -33,15 +33,15 @@
   rails s
   ```
 
-# Check APP
-[↑ Go To Top ↑](https://github.com/chihoko12/coding_challenge_autoscout24/README.md#readme)
+## Check APP
+[↑ Go To Top ↑](#readme)
 
 * Check APP on Heroku
   [Coding Challenge](https://coding-challenge-autoscout24.herokuapp.com/)
   
 
-# Check App Locally
-[↑ Go To Top ↑](https://github.com/chihoko12/coding_challenge_autoscout24/README.md#readme)
+## Check App Locally
+[↑ Go To Top ↑](#readme)
 
 * **Install the APP locally**
  
@@ -92,12 +92,12 @@ rails s --p 3000
 ```http://localhost:3000```
 
 
-# API Endpoints
-[↑ Go To Top ↑](https://github.com/chihoko12/coding_challenge_autoscout24/README.md#readme)
+## API Endpoints
+[↑ Go To Top ↑](#readme)
 
 
-# Test App
-[↑ Go To Top ↑](https://github.com/chihoko12/coding_challenge_autoscout24/README.md#readme)
+## Test App
+[↑ Go To Top ↑](#readme)
 
 I created a series of tests to verify that all messages created are done under the right
 conditions.
