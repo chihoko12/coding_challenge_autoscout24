@@ -63,6 +63,6 @@ class ContactsController < ApplicationController
     end
     return @contact_month
   end
-
 end
+
 
