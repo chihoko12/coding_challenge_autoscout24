@@ -4,7 +4,6 @@ class ChangeContactDateFromStrToBigint < ActiveRecord::Migration[6.0]
       ALTER TABLE contacts
       ALTER COLUMN contact_date TYPE bigint USING contact_date::bigint
     SQL
-
   end
 
   def down
