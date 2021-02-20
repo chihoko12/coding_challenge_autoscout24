@@ -12,6 +12,6 @@ class Contact < ApplicationRecord
   end
 
   def self.updatable_attributes
-    ["listing_id", "contact_date"]
+    %w[listing_id contact_date]
   end
 end

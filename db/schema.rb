@@ -10,27 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_16_162104) do
-
+ActiveRecord::Schema.define(version: 20_210_216_162_104) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "contacts", force: :cascade do |t|
-    t.bigint "listing_id", null: false
-    t.bigint "contact_date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["listing_id"], name: "index_contacts_on_listing_id"
+  create_table 'contacts', force: :cascade do |t|
+    t.bigint 'listing_id', null: false
+    t.bigint 'contact_date'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['listing_id'], name: 'index_contacts_on_listing_id'
   end
 
-  create_table "listings", force: :cascade do |t|
-    t.string "make"
-    t.integer "price"
-    t.integer "mileage"
-    t.string "seller_type"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'listings', force: :cascade do |t|
+    t.string 'make'
+    t.integer 'price'
+    t.integer 'mileage'
+    t.string 'seller_type'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  add_foreign_key "contacts", "listings"
+  add_foreign_key 'contacts', 'listings'
 end

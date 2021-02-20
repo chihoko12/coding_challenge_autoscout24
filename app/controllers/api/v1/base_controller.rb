@@ -1,5 +1,4 @@
 class Api::V1::BaseController < ActionController::API
-
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def user_not_authorized(exception)
