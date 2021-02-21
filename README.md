@@ -31,8 +31,6 @@
 
 * **Install the APP locally**
 
-**[GitHub Repo](https://github.com/chihoko12/coding_challenge_autoscout24)**
-
 - Clone the repo:
 ```ruby
 git clone git@github.com:chihoko12/coding_challenge_autoscout24.git
