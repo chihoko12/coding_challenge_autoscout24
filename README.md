@@ -3,7 +3,7 @@
 - [About App](#about-app)
 - [Check App](#check-app)
 - [How to run App locally](#how-to-run-app-locally)
-- [How to test App locally](#hot-to-test-app-locally)
+- [How to test App locally](#how-to-test-app-locally)
 - [API Endpoint](#api-endpoint)
 
 
@@ -62,6 +62,8 @@ in case the default port is not 3000. ```ruby rails s --p 3000 ```
 ```http://localhost:3000```
 
 ## How to test App locally
+[↑ Go To Top ↑](#readme)
+
 Test is made based on Rspec.
 
 ```ruby
@@ -70,6 +72,7 @@ bundle exec rspec
 
 
 ## API Endpoint
+[↑ Go To Top ↑](#readme)
 
 listings GET
 ```
