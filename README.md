@@ -17,7 +17,7 @@
 4. The Top 5 most contacted listings per Month
 
 * Language: Ruby version  ``` ruby 2.6.6 ```
-* Web Frameworks: Ruby on Rails
+* Web Frameworks: ``` Ruby on Rails ```
 
 
 ## Check APP
@@ -45,6 +45,7 @@ git clone git@github.com:chihoko12/coding_challenge_autoscout24.git
 When you have ruby and rbenv, you can run and test the app locally.
 
 Create databases. ```ruby rails setup ```
+
 Run ```bundle install```
 
 This app uses PostgreSQL as database. If you don't have it, you need to install it:
