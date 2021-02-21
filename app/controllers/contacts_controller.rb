@@ -19,12 +19,13 @@ class ContactsController < ApplicationController
       @counter += + 1
       @price_sum += Listing.find(contact[0]).price
       @contact_sum += contact[1]
-      next unless @contact_sum >= Contact.all.count * 0.3
+      if @contact_sum >= Contact.all.count * 0.3
 
-      @counter -= 1
-      @price_sum -= Listing.find(contact[0]).price
-      @contact_sum -= contact[1]
-      break
+        @counter -= 1
+        @price_sum -= Listing.find(contact[0]).price
+        @contact_sum -= contact[1]
+        break
+      end
     end
   end
 

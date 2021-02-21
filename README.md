@@ -38,9 +38,6 @@
 ```ruby
 git clone git@github.com:chihoko12/coding_challenge_autoscout24.git
 ```
-```ruby
-cd coding_challenge_autoscout24
-```
 
 - Or you can download the app with the following link:
   - [Get App Here](https://github.com/chihoko12/coding_challenge_autoscout24/archive/master.zip)
