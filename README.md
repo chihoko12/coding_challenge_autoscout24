@@ -2,14 +2,15 @@
 
 - [About App](#about-app)
 - [Check App](#check-app)
-- [Check App Locally](#check-app-locally)
+- [How to run App locally](#how-to-run-app-locally)
+- [How to test App locally](#hot-to-test-app-locally)
 - [API Endpoint](#api-endpoint)
 
 
 ## About App
 [↑ Go To Top ↑](#readme)
 
-* What this APP offers: 
+* What this APP offers:
 1. Average Listing Selling Price per Seller Type
 2. Distribution (in percent) of available cars by Make
 3. Average price of the 30% most contacted listings
@@ -17,21 +18,19 @@
 
 * Language: Ruby version  ``` ruby 2.6.6 ```
 * Web Frameworks: Ruby on Rails
-* System dependencies  ``` ruby bundle install ```
-* Database creation  ``` ruby rails db:create db:migrate db:seed ```
-* Server initialization ``` ruby rails s ```
+
 
 ## Check APP
 [↑ Go To Top ↑](#readme)
 
-* Check APP on Heroku   [Coding Challenge](https://coding-challenge-autoscout24.herokuapp.com/)
-  
+* Check APP on Heroku -->  [Coding Challenge](https://coding-challenge-autoscout24.herokuapp.com/)
 
-## Check App Locally
+
+## How to run App locally
 [↑ Go To Top ↑](#readme)
 
 * **Install the APP locally**
- 
+
 **[GitHub Repo](https://github.com/chihoko12/coding_challenge_autoscout24)**
 
 - Clone the repo:
@@ -45,34 +44,30 @@ git clone git@github.com:chihoko12/coding_challenge_autoscout24.git
 
 * **Run the APP locally**
 
-When you have ruby and rbenv, you can run and test the app locally. 
+When you have ruby and rbenv, you can run and test the app locally.
 
-The following command will create databases based on database.yml,
-load schema.rb, and seed the data by running seeds.rb.
-
-```ruby
-  rails db:setup
-```
-
-Run ```bundle install``` & ```rails db:migrate``` 
+Create databases. ```ruby rails setup ```
+Run ```bundle install```
 
 This app uses PostgreSQL as database. If you don't have it, you need to install it:
-
 ```ruby
 brew install postgresql
 brew services start postgresql
 ```
 
-* Start the server.
-```rails s```
+* Start the server. ```rails s```
 
-in case the default port is not 3000.
-```ruby
-rails s --p 3000
-```
+in case the default port is not 3000. ```ruby rails s --p 3000 ```
 
 * Open the browser.
 ```http://localhost:3000```
+
+## How to test App locally
+Test is made based on Rspec.
+
+```ruby
+bundle exec rspec
+```
 
 
 ## API Endpoint
