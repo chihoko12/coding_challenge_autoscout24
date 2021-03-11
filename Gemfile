@@ -16,10 +16,13 @@ gem 'sass-rails', '>= 6'
 gem 'simple_form'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
+gem 'redis', "~> 4.0"
+gem 'sidekiq', "~> 6.0"
+gem 'sidekiq-failures'
+gem 'sidekiq_alive', "~> 2.0"
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'rspec-rails', '~> 4.0.2'
 end
 
 group :development do
@@ -27,6 +30,7 @@ group :development do
   gem 'rubocop', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rspec-rails', '~> 4.0.2'
   gem 'web-console', '>= 3.3.0'
 end
 
